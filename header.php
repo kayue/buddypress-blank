@@ -17,7 +17,7 @@
 		<meta name="description" content="<?php echo $description; ?>">
 		<meta name="author" content="">
 		<meta name="language" content="">
-		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css"> 
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
 		<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?>" href="<?php bloginfo('rss2_url'); ?>">
 		<link rel="shortcut icon" href="<?php bloginfo(url); ?>/favicon.ico" type="image/x-icon">
 		<link rel="apple-touch-icon" href="<?php bloginfo(url); ?>/apple-touch-icon.png" type="image/png">
