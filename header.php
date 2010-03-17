@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title><?php wp_title(); ?></title>
+		<title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 		<meta name="keywords" content="">
 		<?php
 			if(is_single() OR is_page()){
