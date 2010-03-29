@@ -3,7 +3,6 @@
 	<head>
 		<meta charset="utf-8">
 		<title><?php wp_title('&laquo;', true, 'right'); ?> <?php bloginfo('name'); ?></title>
-		<meta name="keywords" content="">
 		<?php
 			if(is_single() OR is_page()){
 				the_post();
@@ -24,7 +23,6 @@
 		<?php wp_head(); ?>
 	</head>
 
-	<!--[if IE 6]><body id="ie6"><![endif]-->
 	<!--[if IE 7]><body id="ie7"><![endif]-->
 	<!--[if IE 8]><body id="ie8"><![endif]-->
 	<!--[if !IE]><!--><body><!-- <![endif]-->

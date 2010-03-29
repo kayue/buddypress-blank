@@ -7,7 +7,7 @@
 
 
 <?php
-	$mail_to = 'peter@peterkroener.de';
+	$mail_to = '';
 	$error = array();
 	$erfolg = false;
 	if(!empty($_POST)){
