@@ -17,7 +17,7 @@
 		<?php the_content(); ?>
 	</div>
 	<p>
-		<a href="<?php the_permalink() ?>#kommentare" rel="comment">Kommentare</a>
+		<a href="<?php the_permalink() ?>#kommentare" rel="comment"><?php comments_number('Keine Kommentare','Ein Kommentar','% Kommentare'); ?></a>
 	</p>
 </div>
 

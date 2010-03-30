@@ -93,7 +93,7 @@
 
 	<p>
 		<input name="submit" type="submit" id="submit" value="<?php echo attribute_escape(__('Kommentar abschicken!')); ?>">
-	<p>
+	</p>
 
 
 
