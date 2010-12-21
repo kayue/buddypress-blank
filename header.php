@@ -21,8 +21,8 @@
         <?php wp_head(); ?>
     </head>
     
-    <?if(is_single() && $post = $wp_query->post) $cat_class = get_the_category();?>
-    <body <?php body_class("single-".$cat_class[0]->slug) ?> id="popbee-bp">
+    <? if (is_single() && $post = $wp_query->post) { $cat_class = get_the_category(); $singleCategory = "single-".$cat_class[0]->slug; } // include category class ?>
+    <body <?php body_class($singleCategory) ?>>
     
     <div id="container">
         <div id="header">
