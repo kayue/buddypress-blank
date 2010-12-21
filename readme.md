@@ -1,4 +1,5 @@
-BPBlank
+Buddypress Blank
 =======
 
-A blank html template for buddy press.
+A blank html5 template for buddypress with minimal CSS styles. 
+Forked from SirPepe/BPblank.
