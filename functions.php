@@ -5,7 +5,6 @@ if ( !class_exists( 'BP_Core_User' ) ) return false;
 // disable custom header
 define( 'BP_DTHEME_DISABLE_CUSTOM_HEADER', true );
 
-
 // Remove junks from head
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wp_generator');
@@ -26,7 +25,7 @@ register_sidebar( array(
 	'description' => 'Appear on every blog page.',
 	'before_widget' => '<div id="%1$s" class="widget-container %2$s clearfix">',
 	'after_widget' => '</div>',
-	'before_title' => '<h4 class="widget-title">',
+	'before_title' => '<h4 class="title">',
 	'after_title' => '</h4>'
 ));
 
@@ -36,7 +35,7 @@ register_sidebar( array(
 	'description' => 'Appear on every buddy press page.',
 	'before_widget' => '<div id="%1$s" class="widget-container %2$s clearfix">',
 	'after_widget' => '</div>',
-	'before_title' => '<h4 class="widget-title">',
+	'before_title' => '<h4 class="title">',
 	'after_title' => '</h4>'
 ));
 

@@ -6,16 +6,14 @@
         
 		<div class="post" id="post-<?php the_ID(); ?>">
 		
-			<div class="post-content">
+			<div class="content">
 			    <p class="date"><?php the_time('l, j F Y'); ?> by <?=bp_core_get_userlink( $post->post_author )?></p>
-				<h2 class="posttitle"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e( 'Permanent Link to', 'buddypress' ) ?> <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+			    <a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+    				<h2 class="title"><?php the_title(); ?></h2>
+				</a>
 
 				<div class="entry">
 					<?php the_content('Continue reading...'); ?>
-				</div>
-				
-				<div class="facebook-like">
-				    <fb:like href="<?php the_permalink() ?>" font="arial"></fb:like>
 				</div>
 				
 				<div class="metadata">
@@ -23,7 +21,7 @@
 				    <p class="tags"><?php the_tags('', ', ', ''); ?></p>
 				    <p class="comments"><?php comments_popup_link( 'No Comments &#187;', '1 Comment &#187;', '% Comments &#187;' ); ?></p>
 				</div>
-			</div> <!-- / .post-content -->
+			</div> <!-- / .content -->
 
 		</div> <!-- / .post -->
         
@@ -31,13 +29,11 @@
         
 	<?php endwhile; ?>
     
-    <?the_theme_pagination()?>
+    <? the_theme_pagination(); ?>
     
 <?php else : ?>
-
-	<h2 class="center"><?php _e( 'Not Found', 'buddypress' ) ?></h2>
-	<p class="center"><?php _e( 'Sorry, but you are looking for something that isn\'t here.', 'buddypress' ) ?></p>
-
-	<?php locate_template( array( 'searchform.php' ), true ) ?>
-
+    <div class="not-found">
+    	<h2>Not Found</h2>
+    	<p>Sorry, but you are looking for something that isn't here.</p>
+    </div>
 <?php endif; ?>
