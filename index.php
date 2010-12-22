@@ -1,44 +1,19 @@
 <?php get_header(); ?>
-    
-    <div id="content-container">
-        <div id="content">
-            
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            
-            <div class="postcontainer" id="post-<?php the_ID(); ?>">
-            	<?php if(!is_single()): ?>
-            		<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-            	<?php else: ?>
-            		<h2><?php the_title(); ?></h2>
-            	<?php endif; ?>
-            	
-            	<div class="postcontent">
-            		<?php the_content(); ?>
-            	</div>
-            	<p>
-            		<?php the_time('j. F Y'); ?>
-            		|
-            		<a href="<?php the_permalink() ?>#kommentare" rel="comment"><?php comments_number('Keine Kommentare','Ein Kommentar','% Kommentare'); ?></a>
-            	</p>
-            </div>
-            
-            <?php comments_template(); ?>
-            
-            <?php endwhile; ?>
-            
-            <?php else: ?>
-            
-            <div class="postcontainer">
-            	<h2>Nichts gefunden</h2>
-            	<p>
-            		Es konnten keine der Anfrage entsprechenden Beiträge oder Seiten gefunden werden.
-            	</p>
-            </div>
-            
-            <?php endif; ?>
-        </div> <!-- #content -->
-    </div> <!-- #content-container -->
-    
-    <?php get_sidebar(); ?>
-    
+
+<div id="content-container">
+    <div id="content">
+        
+        <?php do_action( 'bp_before_blog_home' ) ?>
+        
+        <div class="page" id="blog-latest">
+            <? get_template_part( 'loop', 'home' ); ?>
+        </div>
+        
+        <?php do_action( 'bp_after_blog_home' ) ?>
+
+    </div> <!-- #content -->
+</div> <!-- #content-container -->
+
+<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>
