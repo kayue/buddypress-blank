@@ -110,6 +110,78 @@ function get_trimmed_excerpt($maxChars = 160, $appendingString = '...', $default
 	return $result;
 }
 
+
+/**
+ * Display pagination
+ */
+function the_theme_pagination( $pages_around = 3 ) { // pages will be show before and after current page
+    
+    // don't show in single page
+    if ( is_single() || is_singular() ) return; 
+    
+    global $wp_query, $paged;
+    
+    $total_page = $wp_query->max_num_pages; // Total pages
+    if ( $total_page == 1 ) return; // don't show when only one page
+    if ( empty( $paged ) ) $paged = 1; // current page
+    
+    echo "<div class=\"pagination\">";
+    
+    // html format
+    $page_number_html = '<a class="page-number" href="%1$s" title="%2$s">%2$s</a>'; // 1: link, 2: text
+    $current_page_number_html = '<strong class="page-number current-page">%s</strong>'; // 1: link, 2: text
+    $dots_html = '<span class="dots">…</span>';
+    
+    $previous_page_html = '<a class="previous-page" href="%s" title="Previous page">&larr; Previous Entries</a> '; // 1:link
+    $disabled_previous_page_html = '<span class="previous-page disabled">&larr; Previous Entries</span> '; //&laquo;
+    
+    $next_page_html = ' <a class="next-page" href="%s" title="Next page">Next Entries &rarr;</a> '; // 1:link
+    $disabled_next_page_html = ' <span class="next-page disabled">Next Entries &rarr;</span> '; //&raquo;
+    
+    // previous page
+    if ($paged > 1) {
+        printf($previous_page_html, get_pagenum_link($paged-1));
+    } else {
+        echo $disabled_previous_page_html;
+    }
+    
+    // next page
+    if ($paged < $total_page) {
+        printf($next_page_html, get_pagenum_link($paged+1));
+    } else {
+        echo $disabled_next_page_html;
+    }
+    
+    // page number
+    echo '<span class="page-number-container">Page: ';
+    if ( $paged > $pages_around + 1 ) printf($page_number_html, esc_html(get_pagenum_link(1)), 1);
+    if ( $paged > $pages_around + 2 ) echo $dots_html;
+     
+    $start = $paged - $pages_around;
+    $start = $start <= 0 ? 1 : $start;
+    
+    $end = $paged + $pages_around;
+    $end = $end > $total_page ? $total_page : $end;
+    
+    for( $i = $start; $i <= $end; $i++ ) { // Middle pages
+        
+        if($i == $paged) {
+            // current page
+            printf($current_page_number_html, $i);
+            continue;
+        }
+        
+        printf($page_number_html, get_pagenum_link($i), $i);
+    }
+    
+    if ( $paged < $total_page - $pages_around ) echo $dots_html;
+    // if ( $paged < $total_page - $pages_around ) printf($format, esc_html(get_pagenum_link($total_page)), "Last");
+    
+    echo "</span>";
+    
+    echo "</div>";
+}
+
 // include all theme widget
 foreach (glob(TEMPLATEPATH.'/widgets/*.php') as $file) {
     include_once $file;
