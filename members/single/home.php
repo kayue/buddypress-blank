@@ -5,11 +5,9 @@
 
 		<?php do_action( 'bp_before_member_home_content' ) ?>
 
-
-		<div id="item-header">
+		<div id="item-header" class="clearfix">
 			<?php locate_template( array( 'members/single/member-header.php' ), true ) ?>
 		</div><!-- #item-header -->
-
 
 		<div id="item-nav">
 			<div class="item-list-tabs no-ajax" id="object-nav">
@@ -21,10 +19,8 @@
 			</div>
 		</div><!-- #item-nav -->
 
-
 		<div id="item-body">
 			<?php do_action( 'bp_before_member_body' ) ?>
-
 
 			<?php if ( bp_is_user_activity() || !bp_current_component() ) : ?>
 				<?php locate_template( array( 'members/single/activity.php' ), true ) ?>

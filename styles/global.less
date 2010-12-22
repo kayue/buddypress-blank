@@ -1,4 +1,4 @@
-.debug-outline { 
+.dev-outline { 
     padding: 5px; 
     border: solid 1px #CCC; 
     margin: 5px;
@@ -87,7 +87,7 @@ body {
 }
 
 #header {
-    .debug-outline
+    .dev-outline
 }
 
 #content-container {
@@ -95,9 +95,9 @@ body {
     width: 660px;
     
     #content {
-        .debug-outline;
+        .dev-outline;
         
-        .post { .debug-outline }
+        .post { .dev-outline }
     }
 }
 
@@ -106,7 +106,7 @@ body {
     width: 300px;
     
     #sidebar {
-        .debug-outline
+        .dev-outline;
     }
 }
 
@@ -114,7 +114,29 @@ body {
     clear: both;
     
     #footer {
-        .debug-outline
+        .dev-outline;
     }
 }
 /* @end */
+
+/* @group Common Buddypress Styles */
+body.buddypress {
+    #item-header {
+        .dev-outline;
+    }
+    
+    #item-nav {
+        .dev-outline;
+    }
+    
+    #item-body {
+        .dev-outline;
+        
+        #subnav {
+            .dev-outline;
+        }
+    }
+}
+/* @end */
+
+@import "buddypress.less";

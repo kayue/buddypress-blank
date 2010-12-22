@@ -1,4 +1,4 @@
-.debug-outline{padding:5px;border:solid 1px #CCC;margin:5px;}
+.dev-outline{padding:5px;border:solid 1px #CCC;margin:5px;}
 html{color:#000;background:#FFF;}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
 table{border-collapse:collapse;border-spacing:0;}
@@ -22,3 +22,7 @@ legend{color:#000;}
 #content-container{float:left;width:660px;}#content-container #content{padding:5px;border:solid 1px #CCC;margin:5px;}#content-container #content .post{padding:5px;border:solid 1px #CCC;margin:5px;}
 #sidebar-container{float:right;width:300px;}#sidebar-container #sidebar{padding:5px;border:solid 1px #CCC;margin:5px;}
 #footer-container{clear:both;}#footer-container #footer{padding:5px;border:solid 1px #CCC;margin:5px;}
+body.buddypress #item-header{padding:5px;border:solid 1px #CCC;margin:5px;}
+body.buddypress #item-nav{padding:5px;border:solid 1px #CCC;margin:5px;}
+body.buddypress #item-body{padding:5px;border:solid 1px #CCC;margin:5px;}body.buddypress #item-body #subnav{padding:5px;border:solid 1px #CCC;margin:5px;}
+body{font-size:16px;}

@@ -5,14 +5,11 @@
 
 		<?php if ( bp_has_groups() ) : while ( bp_groups() ) : bp_the_group(); ?>
 
-
 		<?php do_action( 'bp_before_group_plugin_template' ) ?>
 
-
-		<div id="item-header">
+		<div id="item-header" class="clearfix">
 			<?php locate_template( array( 'groups/single/group-header.php' ), true ) ?>
 		</div>
-
 
 		<div id="item-nav">
 			<div class="item-list-tabs no-ajax" id="sub-nav">
