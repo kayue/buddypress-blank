@@ -1,9 +1,7 @@
 <?php get_header() ?>
 
-
-<div id="container">
-	<div id="content">
-
+<div id="content-container">
+    <div id="content">
 
 			<?php if ( bp_has_groups() ) : while ( bp_groups() ) : bp_the_group(); ?>
 

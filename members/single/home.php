@@ -1,9 +1,7 @@
 <?php get_header() ?>
 
-
-<div id="container">
-	<div id="content">
-
+<div id="content-container">
+    <div id="content">
 
 		<?php do_action( 'bp_before_member_home_content' ) ?>
 

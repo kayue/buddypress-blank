@@ -3,14 +3,11 @@
 
 	<?php do_action( 'bp_before_create_blog_content' ) ?>
 
-
-	<div id="container">
-		<div id="content">
-
-
+    <div id="content-container">
+        <div id="content">
+        
 		<?php do_action( 'template_notices' ) ?>
-
-
+        
 		<h3><?php _e( 'Create a Blog', 'buddypress' ) ?> &nbsp;<a class="button" href="<?php echo bp_get_root_domain() . '/' . BP_BLOGS_SLUG . '/' ?>"><?php _e( 'Blogs Directory', 'buddypress' ) ?></a></h3>
 
 
@@ -37,6 +34,5 @@
 
 
 	<?php do_action( 'bp_after_create_blog_content' ) ?>
-
-
+	
 <?php get_footer() ?>

@@ -1,7 +1,7 @@
 <?php get_header() ?>
 
-	<div id="container">
-		<div id="content">
+	<div id="content-container">
+	    <div id="content">
 
 
 			<?php if ( !is_user_logged_in() ) : ?>
@@ -125,10 +125,8 @@
 
 
 		</div><!-- #content -->
-	</div><!-- #container -->
+	</div><!-- #content-container -->
 
-
-<?php locate_template(array('sidebar.php'), true) ?>
-
+    <?php get_sidebar(); ?>
 
 <?php get_footer() ?>

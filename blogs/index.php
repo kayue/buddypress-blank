@@ -1,9 +1,7 @@
 <?php get_header() ?>
 
-
-	<div id="container">
-		<div id="content">
-
+<div id="content-container">
+    <div id="content">
 
 		<form action="" method="post" id="blogs-directory-form" class="dir-form">
 

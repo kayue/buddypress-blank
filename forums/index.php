@@ -3,10 +3,8 @@
 
 	<?php do_action( 'bp_before_directory_forums_content' ) ?>
 
-
-	<div id="container">
-		<div id="content">
-
+<div id="content-container">
+    <div id="content">
 
 		<form action="" method="post" id="forums-search-form" class="dir-form">
 			<h3><?php _e( 'Group Forums Directory', 'buddypress' ) ?><?php if ( is_user_logged_in() ) : ?> &nbsp;<a class="button" href="#new-topic" id="new-topic-button"><?php _e( 'New Topic', 'buddypress' ) ?></a><?php endif; ?></h3>
