@@ -143,14 +143,8 @@ Content-Transfer-Encoding: quoted-printable";
 	</p>
 </div>
 
-
-
 <?php endif; ?>
 
-
-
 <?php get_sidebar(); ?>
-
-
 
 <?php get_footer(); ?>

@@ -1,4 +1,2 @@
-<h2>Sidebar</h2>
-<p>
-	Sidebar
-</p>
+<div id="sidebar">
+</div>
