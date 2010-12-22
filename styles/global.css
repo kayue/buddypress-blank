@@ -19,6 +19,6 @@ legend{color:#000;}
 .clearfix{zoom:1;}
 #wrapper{width:960px;margin:0 auto;}
 #header{padding:5px;border:solid 1px #CCC;margin:5px;}
-#content-container{float:left;width:660px;}#content-container #content{padding:5px;border:solid 1px #CCC;margin:5px;}
+#content-container{float:left;width:660px;}#content-container #content{padding:5px;border:solid 1px #CCC;margin:5px;}#content-container #content .post{padding:5px;border:solid 1px #CCC;margin:5px;}
 #sidebar-container{float:right;width:300px;}#sidebar-container #sidebar{padding:5px;border:solid 1px #CCC;margin:5px;}
 #footer-container{clear:both;}#footer-container #footer{padding:5px;border:solid 1px #CCC;margin:5px;}
