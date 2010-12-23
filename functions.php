@@ -2,9 +2,6 @@
 // stop the theme from killing WordPress if BuddyPress is not enabled.
 if ( !class_exists( 'BP_Core_User' ) ) return false;
 
-// disable custom header
-define( 'BP_DTHEME_DISABLE_CUSTOM_HEADER', true );
-
 // Remove junks from head
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wp_generator');
@@ -39,6 +36,13 @@ register_sidebar( array(
 	'after_title' => '</h4>'
 ));
 
+// post thumbnail support
+if (function_exists('add_theme_support')) {
+    add_theme_support('post-thumbnails');
+    set_post_thumbnail_size(150, 150, true); // Normal post thumbnails
+    
+    add_image_size('loop-thumbnails', 150, 150, true);
+}
 
 /**
  * Load Javascript files
