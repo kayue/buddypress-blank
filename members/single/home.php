@@ -1,11 +1,11 @@
 <?php get_header() ?>
 
 	<div id="content-container">
-		<div class="content">
+		<div id="content">
 
 			<?php do_action( 'bp_before_member_home_content' ) ?>
 
-			<div id="item-header">
+			<div id="item-header" class="clearfix">
 				<?php locate_template( array( 'members/single/member-header.php' ), true ) ?>
 			</div><!-- #item-header -->
 
@@ -53,8 +53,8 @@
 
 			<?php do_action( 'bp_after_member_home_content' ) ?>
 
-		</div><!-- .padder -->
-	</div><!-- #content -->
+		</div><!-- #content -->
+	</div><!-- #content-container -->
 
 	<?php locate_template( array( 'sidebar.php' ), true ) ?>
 

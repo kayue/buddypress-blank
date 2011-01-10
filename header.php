@@ -16,4 +16,5 @@
             <h1><a href="<?php bloginfo(url); ?>/"><?php bloginfo('name') ?></a></h1>
             <p><?php bloginfo('description') ?></p>
             <?php include(TEMPLATEPATH.'/searchform.php'); ?>
+            <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
         </div>

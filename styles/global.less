@@ -1,3 +1,5 @@
+@padding: 20px;
+
 .dev-outline { 
     padding: 5px; 
     border: solid 1px #CCC; 
@@ -78,7 +80,13 @@ legend {
 
 /* @group Page Layout */
 body {
-    
+    font-family: sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: normal;
+    letter-spacing: normal;
+    line-height: 1.4em;
 }
 
 #wrapper {
@@ -123,6 +131,8 @@ body {
 body.buddypress {
     #item-header {
         .dev-outline;
+        
+        #item-header-avatar { float: left; }
     }
     
     #item-nav {
@@ -136,7 +146,26 @@ body.buddypress {
             .dev-outline;
         }
     }
+    
+    #whats-new-form {
+        #whats-new-avatar { float: left; }
+    }
+    
+    .item-list-tabs {
+        li { display: inline; }
+    }
+    
+    .activity-list {
+        .activity {
+            //overflow: hidden;
+            .dev-outline;
+            
+            .activity-avatar {
+                float: left;
+            }
+        }
+    }
 }
 /* @end */
 
-@import "buddypress.less";
+// @import "buddypress.less";

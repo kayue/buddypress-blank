@@ -2,7 +2,7 @@
 // stop the theme from killing WordPress if BuddyPress is not enabled.
 if ( !class_exists( 'BP_Core_User' ) ) return false;
 
-// Remove junks from head
+// remove junks from head
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wp_generator');
 remove_action('wp_head', 'feed_links', 2);
@@ -12,6 +12,12 @@ remove_action('wp_head', 'feed_links_extra', 3);
 remove_action('wp_head', 'start_post_rel_link', 10, 0);
 remove_action('wp_head', 'parent_post_rel_link', 10, 0);
 remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
+
+// register menu
+register_nav_menu( 'primary', 'Primary Menu' );
+
+// add featured image support
+add_theme_support('post-thumbnails');
 
 /**
  * Register the widget columns 
@@ -36,14 +42,6 @@ register_sidebar( array(
 	'after_title' => '</h4>'
 ));
 
-// post thumbnail support
-if (function_exists('add_theme_support')) {
-    add_theme_support('post-thumbnails');
-    set_post_thumbnail_size(150, 150, true); // Normal post thumbnails
-    
-    add_image_size('loop-thumbnails', 150, 150, true);
-}
-
 /**
  * Load Javascript files
  */
@@ -67,6 +65,18 @@ function _theme_load_scripts()
     
     if ( !bp_is_blog_page() ) {
         wp_enqueue_script("buddypress");
+        
+        // Add words that we need to use in JS to the end of the page so they can be translated and still used.
+        wp_localize_script( "buddypress", "BP_DTheme", array(
+        	'my_favs'           => __( 'My Favorites', 'buddypress' ),
+        	'accepted'          => __( 'Accepted', 'buddypress' ),
+        	'rejected'          => __( 'Rejected', 'buddypress' ),
+        	'show_all_comments' => __( 'Show all comments for this thread', 'buddypress' ),
+        	'show_all'          => __( 'Show all', 'buddypress' ),
+        	'comments'          => __( 'comments', 'buddypress' ),
+        	'close'             => __( 'Close', 'buddypress' ),
+        	'mention_explain'   => sprintf( __( "%s is a unique identifier for %s that you can type into any message on this site. %s will be sent a notification and a link to your message any time you use it.", 'buddypress' ), '@' . bp_get_displayed_user_username(), bp_get_user_firstname( bp_get_displayed_user_fullname() ), bp_get_user_firstname( bp_get_displayed_user_fullname() ) )
+        ));
     }
 }
 add_action('wp_print_scripts', '_theme_load_scripts');
@@ -189,3 +199,6 @@ function the_theme_pagination( $pages_around = 3 ) { // pages will be show befor
 foreach (glob(TEMPLATEPATH.'/widgets/*.php') as $file) {
     include_once $file;
 }
+
+// Load the AJAX functions for the theme
+require_once( TEMPLATEPATH . '/buddypress-ajax.php' );

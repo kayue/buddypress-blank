@@ -1,7 +1,7 @@
 <?php get_header() ?>
 
 	<div id="content-container">
-		<div class="content">
+		<div id="content">
 
 		<form action="<?php bp_group_creation_form_action() ?>" method="post" id="create-group-form" class="standard-form" enctype="multipart/form-data">
 			<h3><?php _e( 'Create a Group', 'buddypress' ) ?> &nbsp;<a class="button" href="<?php echo bp_get_root_domain() . '/' . BP_GROUPS_SLUG . '/' ?>"><?php _e( 'Groups Directory', 'buddypress' ) ?></a></h3>
@@ -254,8 +254,8 @@
 
 		</form>
 
-		</div><!-- .padder -->
-	</div><!-- #content -->
+		</div><!-- #content -->
+	</div><!-- #content-container -->
 
 	<?php locate_template( array( 'sidebar.php' ), true ) ?>
 

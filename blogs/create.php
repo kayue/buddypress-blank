@@ -3,7 +3,7 @@
 	<?php do_action( 'bp_before_directory_blogs_content' ) ?>
 
 	<div id="content-container">
-		<div class="content">
+		<div id="content">
 
 		<?php do_action( 'template_notices' ) ?>
 
@@ -25,8 +25,8 @@
 
 		<?php do_action( 'bp_after_create_blog_content' ) ?>
 
-		</div><!-- .padder -->
-	</div><!-- #content -->
+		</div><!-- #content -->
+	</div><!-- #content-container -->
 
 	<?php locate_template( array( 'sidebar.php' ), true ) ?>
 

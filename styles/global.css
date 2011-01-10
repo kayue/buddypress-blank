@@ -17,12 +17,15 @@ legend{color:#000;}
 .clearfix:before,.clearfix:after{content:".";display:block;height:0;overflow:hidden;}
 .clearfix:after{clear:both;}
 .clearfix{zoom:1;}
+body{font-family:sans-serif;font-size:14px;font-style:normal;font-weight:normal;text-transform:normal;letter-spacing:normal;line-height:1.4em;}
 #wrapper{width:960px;margin:0 auto;}
 #header{padding:5px;border:solid 1px #CCC;margin:5px;}
 #content-container{float:left;width:660px;}#content-container #content{padding:5px;border:solid 1px #CCC;margin:5px;}#content-container #content .post{padding:5px;border:solid 1px #CCC;margin:5px;}
 #sidebar-container{float:right;width:300px;}#sidebar-container #sidebar{padding:5px;border:solid 1px #CCC;margin:5px;}
 #footer-container{clear:both;}#footer-container #footer{padding:5px;border:solid 1px #CCC;margin:5px;}
-body.buddypress #item-header{padding:5px;border:solid 1px #CCC;margin:5px;}
+body.buddypress #item-header{padding:5px;border:solid 1px #CCC;margin:5px;}body.buddypress #item-header #item-header-avatar{float:left;}
 body.buddypress #item-nav{padding:5px;border:solid 1px #CCC;margin:5px;}
 body.buddypress #item-body{padding:5px;border:solid 1px #CCC;margin:5px;}body.buddypress #item-body #subnav{padding:5px;border:solid 1px #CCC;margin:5px;}
-body{font-size:16px;}
+body.buddypress #whats-new-form #whats-new-avatar{float:left;}
+body.buddypress .item-list-tabs li{display:inline;}
+body.buddypress .activity-list .activity{padding:5px;border:solid 1px #CCC;margin:5px;}body.buddypress .activity-list .activity .activity-avatar{float:left;}

@@ -32,7 +32,7 @@ div.item-list-tabs{clear:left;overflow:hidden;}div.item-list-tabs ul{width:100%;
 span.activity,div#message p{display:inline-block;font-size:11px;font-weight:normal;background:#FFF9DB;border-bottom:1px solid #FFE8C4;border-right:1px solid #FFE8C4;color:#ffa200;padding:1px 8px;margin-top:6px;text-decoration:none;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;}
 div.dir-search{float:right;margin:-37px 0 0 0;}
 div.dir-search input[type=text]{padding:4px;font-size:12px;}
-div.pagination#user-pag,.friends div.pagination,.mygroups div.pagination,.myblogs div.pagination,noscript div.pagination{background:#f8f8f8;border:none;padding:8px 15px;}
+div.pagination#user-pag,.friends div.pagination,.mygroups div.pagination,.myblogs div.pagination,noscript div.pagination{background:#f8f8f8;border:none;padding:8px 15px;overflow:hidden;}
 div.pagination .pag-count{float:left;}
 div.pagination .pagination-links{float:right;}
 div.pagination .pagination-links span,div.pagination .pagination-links a{font-size:12px;padding:0 5px;}

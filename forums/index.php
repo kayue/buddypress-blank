@@ -1,7 +1,7 @@
 <?php get_header() ?>
 
 	<div id="content-container">
-		<div class="content">
+		<div id="content">
 
 		<form action="" method="post" id="forums-search-form" class="dir-form">
 
@@ -112,8 +112,8 @@
 
 		</form>
 
-		</div><!-- .padder -->
-	</div><!-- #content -->
+		</div><!-- #content -->
+	</div><!-- #content-container -->
 
 	<?php locate_template( array( 'sidebar.php' ), true ) ?>
 

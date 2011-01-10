@@ -1,7 +1,7 @@
 <?php get_header() ?>
 
 	<div id="content-container">
-		<div class="content">
+		<div id="content">
 
 		<form action="" method="post" id="blogs-directory-form" class="dir-form">
 
@@ -47,8 +47,8 @@
 
 		</form><!-- #blogs-directory-form -->
 
-		</div><!-- .padder -->
-	</div><!-- #content -->
+		</div><!-- #content -->
+	</div><!-- #content-container -->
 
 	<?php locate_template( array( 'sidebar.php' ), true ) ?>
 

@@ -1,7 +1,7 @@
 <?php get_header() ?>
 
 	<div id="content-container">
-		<div class="content">
+		<div id="content">
 
 			<?php if ( !is_user_logged_in() ) : ?>
 				<h3><?php _e( 'Site Activity', 'buddypress' ) ?></h3>
@@ -99,8 +99,8 @@
 
 			<?php do_action( 'bp_after_directory_activity_content' ) ?>
 
-		</div><!-- .padder -->
-	</div><!-- #content -->
+		</div><!-- #content -->
+	</div><!-- #content-container -->
 
 	<?php locate_template( array( 'sidebar.php' ), true ) ?>
 
