@@ -3,27 +3,27 @@
 <?php do_action( 'bp_before_activity_entry' ) ?>
 
 <li class="<?php bp_activity_css_class() ?> clearfix" id="activity-<?php bp_activity_id() ?>">
-	<div class="activity-avatar">
+	<div class="item-avatar">
 		<a href="<?php bp_activity_user_link() ?>">
 			<?php bp_activity_avatar( 'type=full&width=100&height=100' ) ?>
 		</a>
 	</div>
 
-	<div class="activity-content">
+	<div class="content">
 
-		<div class="activity-header">
+		<div class="header">
 			<?php bp_activity_action() ?>
 		</div>
 
 		<?php if ( bp_activity_has_content() ) : ?>
-			<div class="activity-inner">
+			<div class="inner">
 				<?php bp_activity_content_body() ?>
 			</div>
 		<?php endif; ?>
 
 		<?php do_action( 'bp_activity_entry_content' ) ?>
 
-		<div class="activity-meta">
+		<div class="meta">
 			<?php if ( is_user_logged_in() && bp_activity_can_comment() ) : ?>
 				<a href="<?php bp_activity_comment_link() ?>" class="acomment-reply" id="acomment-comment-<?php bp_activity_id() ?>"><?php _e( 'Reply', 'buddypress' ) ?> (<span><?php bp_activity_comment_count() ?></span>)</a>
 			<?php endif; ?>
@@ -41,7 +41,7 @@
 	</div>
 
 	<?php if ( 'activity_comment' == bp_get_activity_type() ) : ?>
-		<div class="activity-inreplyto">
+		<div class="inreplyto">
 			<strong><?php _e( 'In reply to', 'buddypress' ) ?></strong> - <?php bp_activity_parent_content() ?> &middot;
 			<a href="<?php bp_activity_thread_permalink() ?>" class="view" title="<?php _e( 'View Thread / Permalink', 'buddypress' ) ?>"><?php _e( 'View', 'buddypress' ) ?></a>
 		</div>

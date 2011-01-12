@@ -195,6 +195,31 @@ function the_theme_pagination( $pages_around = 3 ) { // pages will be show befor
     echo "</div>";
 }
 
+function _add_buddypress_menu($items, $args) { // add a class to menu-item
+    if( $args->theme_location != "primary" ) return $items;
+    
+    if ( bp_is_active( 'activity' ) ) :
+        $items .= "<li class=\"menu-item menu-item-activity\" id=\"menu-item-activity\"><a href=\"".site_url()."/".BP_ACTIVITY_SLUG."\">Activity</a></li>";
+    endif;
+    
+    $items .= "<li class=\"menu-item menu-item-members\" id=\"menu-item-members\"><a href=\"".site_url()."/".BP_MEMBERS_SLUG."\">Members</a></li>";
+    
+    if ( bp_is_active( 'groups' ) ) :
+        $items .= "<li class=\"menu-item menu-item-groups\" id=\"menu-item-groups\"><a href=\"".site_url()."/".BP_GROUPS_SLUG."\">Groups</a></li>";
+    endif;
+    
+    if ( bp_is_active( 'groups' ) && bp_is_active( 'forums' ) && ( function_exists( 'bp_forums_is_installed_correctly' ) && !(int) bp_get_option( 'bp-disable-forum-directory' ) ) && bp_forums_is_installed_correctly() ) :
+        $items .= "<li class=\"menu-item menu-item-forums\" id=\"menu-item-forums\"><a href=\"".site_url()."/".BP_FORUMS_SLUG."\">Forums</a></li>";
+    endif;
+    
+    if ( bp_is_active( 'blogs' ) && bp_core_is_multisite() ) :
+        $items .= "<li class=\"menu-item menu-item-blogs\" id=\"menu-item-blogs\"><a href=\"".site_url()."/".BP_BLOGS_SLUG."\">Blogs</a></li>";
+    endif;
+    
+    return $items;
+}
+add_filter('wp_nav_menu_items', '_add_buddypress_menu', 10, 2);
+
 // include all theme widget
 foreach (glob(TEMPLATEPATH.'/widgets/*.php') as $file) {
     include_once $file;

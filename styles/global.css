@@ -17,6 +17,7 @@ legend{color:#000;}
 .clearfix:before,.clearfix:after{content:".";display:block;height:0;overflow:hidden;}
 .clearfix:after{clear:both;}
 .clearfix{zoom:1;}
+label{display:block;}
 body{font-family:sans-serif;font-size:14px;font-style:normal;font-weight:normal;text-transform:normal;letter-spacing:normal;line-height:1.4em;}
 #wrapper{width:960px;margin:0 auto;}
 #header{padding:5px;border:solid 1px #CCC;margin:5px;}
@@ -26,6 +27,19 @@ body{font-family:sans-serif;font-size:14px;font-style:normal;font-weight:normal;
 body.buddypress #item-header{padding:5px;border:solid 1px #CCC;margin:5px;}body.buddypress #item-header #item-header-avatar{float:left;}
 body.buddypress #item-nav{padding:5px;border:solid 1px #CCC;margin:5px;}
 body.buddypress #item-body{padding:5px;border:solid 1px #CCC;margin:5px;}body.buddypress #item-body #subnav{padding:5px;border:solid 1px #CCC;margin:5px;}
-body.buddypress #whats-new-form #whats-new-avatar{float:left;}
-body.buddypress .item-list-tabs li{display:inline;}
-body.buddypress .activity-list .activity{padding:5px;border:solid 1px #CCC;margin:5px;}body.buddypress .activity-list .activity .activity-avatar{float:left;}
+body.buddypress #whats-new-form{padding:5px;border:solid 1px #CCC;margin:5px;}body.buddypress #whats-new-form #whats-new-avatar{float:left;line-height:0;}
+body.buddypress #whats-new-form h5,body.buddypress #whats-new-form #whats-new-content{margin-left:60px;}
+body.buddypress .item-list-tabs{padding:5px;border:solid 1px #CCC;margin:5px;}body.buddypress .item-list-tabs li{display:inline;}body.buddypress .item-list-tabs li.filter{float:right;}
+body.buddypress .item-list li{padding:5px;border:solid 1px #CCC;margin:5px;position:relative;overflow:hidden;}body.buddypress .item-list li .item-avatar{float:left;line-height:0;}body.buddypress .item-list li .item-avatar img{width:50px;height:50px;}
+body.buddypress .item-list li .item-avatar a{line-height:0;}
+body.buddypress .item-list li .item{margin-left:60px;}
+body.buddypress .item-list li .activity-comments .ac-reply-avatar{float:left;}body.buddypress .item-list li .activity-comments .ac-reply-avatar img{width:30px;height:30px;}
+body.buddypress .activity-list .activity-comments{overflow:hidden;}body.buddypress .activity-list .activity-comments li{padding:5px;border:solid 1px #CCC;margin:5px;}body.buddypress .activity-list .activity-comments li .acomment-content{display:block;clear:both;}
+body.forums.directory #forums-search-form h3{float:left;}
+body.forums.directory #forums-search-form #forums-dir-search{float:right;white-space:nowrap;}
+body.forums.directory #forums-search-form #new-topic-post{padding:5px;border:solid 1px #CCC;margin:5px;clear:both;}
+body.forums.directory #forums-search-form #forums-directory-form{clear:both;}
+body.forums.directory #content-container{width:100%;}
+body.forums.directory table.forum{width:100%;}
+body.forums.directory #sidebar-container{display:none;}
+body.group-forum-topic #post-topic-reply{padding:5px;border:solid 1px #CCC;margin:5px;}

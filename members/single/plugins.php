@@ -5,7 +5,7 @@
 
 			<?php do_action( 'bp_before_member_plugin_template' ) ?>
 
-			<div id="item-header">
+			<div id="item-header" class="clearfix">
 				<?php locate_template( array( 'members/single/member-header.php' ), true ) ?>
 			</div><!-- #item-header -->
 

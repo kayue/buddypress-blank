@@ -6,7 +6,7 @@
 
 			<?php do_action( 'bp_before_group_home_content' ) ?>
 
-			<div id="item-header">
+			<div id="item-header" class="clearfix">
 				<?php locate_template( array( 'groups/single/group-header.php' ), true ) ?>
 			</div><!-- #item-header -->
 

@@ -12,9 +12,18 @@
     <body <?php body_class() ?>>
     
     <div id="wrapper" class="clearfix">
+        
+        <?php do_action( 'bp_before_header' ) ?>
+        
         <div id="header">
             <h1><a href="<?php bloginfo(url); ?>/"><?php bloginfo('name') ?></a></h1>
             <p><?php bloginfo('description') ?></p>
             <?php include(TEMPLATEPATH.'/searchform.php'); ?>
             <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
         </div>
+        
+        <?php do_action( 'bp_after_header' ) ?>
+        
+        <?php do_action( 'bp_before_container' ) ?>
+        
+        

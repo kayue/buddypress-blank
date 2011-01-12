@@ -78,6 +78,12 @@ legend {
 } 
 /* @end */
 
+/* @group */
+label {
+    display: block;
+}
+/* @end */
+
 /* @group Page Layout */
 body {
     font-family: sans-serif;
@@ -148,24 +154,115 @@ body.buddypress {
     }
     
     #whats-new-form {
-        #whats-new-avatar { float: left; }
+        .dev-outline;
+        
+        #whats-new-avatar { 
+            float: left; 
+            line-height: 0;
+        }
+        
+        h5,
+        #whats-new-content {
+            margin-left: 60px;
+        }
     }
     
     .item-list-tabs {
-        li { display: inline; }
-    }
-    
-    .activity-list {
-        .activity {
-            //overflow: hidden;
-            .dev-outline;
+        .dev-outline;
+        li { 
+            display: inline; 
             
-            .activity-avatar {
-                float: left;
+            &.filter {
+                float: right;
             }
         }
+    } //.item-list-tabs
+    
+    .item-list {
+        li {
+            .dev-outline;
+            
+            position: relative;
+            overflow: hidden;
+            
+            .item-avatar {
+                float: left;
+                line-height: 0;
+                img { width: 50px; height: 50px; }
+                a { line-height: 0; }
+            } // .item-avatar
+            
+            .item {
+                margin-left: 60px;
+            }
+            
+            .activity-comments {
+                .ac-reply-avatar {
+                    float: left;
+                    img { width: 30px; height: 30px; }
+                }
+            } // .activity-comments
+        }
+        
+    } // .item-list
+    
+    .activity-list {
+        .activity-comments {
+            overflow: hidden;
+            
+            li {
+                .dev-outline;
+                
+                .acomment-content {
+                    display: block;
+                    clear: both;
+                }
+            }
+        }
+    } // .activity-list
+    
+} // body.buddypress
+
+body.forums.directory {
+    #forums-search-form {
+        h3 {
+            float: left;
+        }
+        
+        #forums-dir-search {
+            float: right;
+            white-space: nowrap;
+        }
+        
+        #new-topic-post {
+            .dev-outline;
+            clear: both;
+        }
+        
+        #forums-directory-form {
+            clear: both;
+        }
+    }
+    
+    #content-container {
+        width: 100%;
+    }
+    
+    table.forum {
+        width: 100%;
+    }
+    
+    #sidebar-container {
+        display: none;
     }
 }
+
+body.group-forum-topic {
+    #post-topic-reply {
+        .dev-outline;
+    }
+}
+
 /* @end */
 
 // @import "buddypress.less";
