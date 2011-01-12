@@ -137,8 +137,22 @@ body {
 body.buddypress {
     #item-header {
         .dev-outline;
+        @avatar-width: 120px;
         
-        #item-header-avatar { float: left; }
+        #item-actions {
+            float: right;
+        }
+        
+        #item-header-avatar { 
+            float: left; 
+            line-height: 0;
+            
+            img { width: @avatar-width; height: auto; }
+        }
+        
+        #item-header-content {
+            margin-left: @avatar-width+5;
+        }
     }
     
     #item-nav {
@@ -192,8 +206,8 @@ body.buddypress {
                 a { line-height: 0; }
             } // .item-avatar
             
-            .item {
-                margin-left: 60px;
+            .item, .content {
+                margin-left: 55px;
             }
             
             .activity-comments {
@@ -213,12 +227,18 @@ body.buddypress {
             li {
                 .dev-outline;
                 
-                .acomment-content {
-                    display: block;
-                    clear: both;
+                .acomment-avatar {
+                    float: left;
                 }
-            }
-        }
+                
+                .acomment-meta,
+                .acomment-content {
+                    margin-left: 25px;
+                }
+                
+                
+            } // li
+        } //.activity-comments
     } // .activity-list
     
 } // body.buddypress
@@ -227,11 +247,6 @@ body.forums.directory {
     #forums-search-form {
         h3 {
             float: left;
-        }
-        
-        #forums-dir-search {
-            float: right;
-            white-space: nowrap;
         }
         
         #new-topic-post {
