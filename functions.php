@@ -198,22 +198,30 @@ function the_theme_pagination( $pages_around = 3 ) { // pages will be show befor
 function _add_buddypress_menu($items, $args) { // add a class to menu-item
     if( $args->theme_location != "primary" ) return $items;
     
+    $items .= "\n";
+    $currentMenuItem = "";
+    
     if ( bp_is_active( 'activity' ) ) :
-        $items .= "<li class=\"menu-item menu-item-activity\" id=\"menu-item-activity\"><a href=\"".site_url()."/".BP_ACTIVITY_SLUG."\">Activity</a></li>";
+        $currentMenuItem = bp_is_page( BP_ACTIVITY_SLUG ) ? "current-menu-item" : "";
+        $items .= "<li class=\"menu-item menu-item-activity {$currentMenuItem}\" id=\"menu-item-activity\"><a href=\"".site_url()."/".BP_ACTIVITY_SLUG."\">Activity</a></li>\n";
     endif;
     
-    $items .= "<li class=\"menu-item menu-item-members\" id=\"menu-item-members\"><a href=\"".site_url()."/".BP_MEMBERS_SLUG."\">Members</a></li>";
+    $currentMenuItem = bp_is_page( BP_MEMBERS_SLUG ) || bp_is_member() ? "current-menu-item" : "";
+    $items .= "<li class=\"menu-item menu-item-members {$currentMenuItem}\" id=\"menu-item-members\"><a href=\"".site_url()."/".BP_MEMBERS_SLUG."\">Members</a></li>\n";
     
     if ( bp_is_active( 'groups' ) ) :
-        $items .= "<li class=\"menu-item menu-item-groups\" id=\"menu-item-groups\"><a href=\"".site_url()."/".BP_GROUPS_SLUG."\">Groups</a></li>";
+        $currentMenuItem = bp_is_page( BP_GROUPS_SLUG ) || bp_is_group() ? "current-menu-item" : "";
+        $items .= "<li class=\"menu-item menu-item-groups {$currentMenuItem}\" id=\"menu-item-groups\"><a href=\"".site_url()."/".BP_GROUPS_SLUG."\">Groups</a></li>\n";
     endif;
     
     if ( bp_is_active( 'groups' ) && bp_is_active( 'forums' ) && ( function_exists( 'bp_forums_is_installed_correctly' ) && !(int) bp_get_option( 'bp-disable-forum-directory' ) ) && bp_forums_is_installed_correctly() ) :
-        $items .= "<li class=\"menu-item menu-item-forums\" id=\"menu-item-forums\"><a href=\"".site_url()."/".BP_FORUMS_SLUG."\">Forums</a></li>";
+        $currentMenuItem = bp_is_page( BP_FORUMS_SLUG ) ? "current-menu-item" : "";
+        $items .= "<li class=\"menu-item menu-item-forums {$currentMenuItem}\" id=\"menu-item-forums\"><a href=\"".site_url()."/".BP_FORUMS_SLUG."\">Forums</a></li>\n";
     endif;
     
     if ( bp_is_active( 'blogs' ) && bp_core_is_multisite() ) :
-        $items .= "<li class=\"menu-item menu-item-blogs\" id=\"menu-item-blogs\"><a href=\"".site_url()."/".BP_BLOGS_SLUG."\">Blogs</a></li>";
+        $currentMenuItem = bp_is_page( BP_BLOGS_SLUG ) ? "current-menu-item" : "";
+        $items .= "<li class=\"menu-item menu-item-blogs {$currentMenuItem}\" id=\"menu-item-blogs\"><a href=\"".site_url()."/".BP_BLOGS_SLUG."\">Blogs</a></li>\n";
     endif;
     
     return $items;
