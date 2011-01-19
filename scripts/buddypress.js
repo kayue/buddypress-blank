@@ -312,7 +312,7 @@ $(document).ready( function() {
 			var form_parent = form.parent();
 			var form_id = form.attr('id').split('-');
 
-			if ( 'activity-comments' !== form_parent.attr('class') ) {
+			if ( !form_parent.hasClass('activity-comments') ) {
 				var tmp_id = form_parent.attr('id').split('-');
 				var comment_id = tmp_id[1];
 			} else {
