@@ -221,24 +221,80 @@ body.buddypress {
     } // .item-list
     
     .activity-list {
-        .activity-comments {
+        // comments
+        .activity-comments > ul {
             overflow: hidden;
             
+            // general comment styles
             li {
                 .dev-outline;
                 
                 .acomment-avatar {
                     float: left;
                 }
-                
                 .acomment-meta,
                 .acomment-content {
-                    margin-left: 25px;
+                    margin-left: 30px;
+                }
+                .acomment-meta {
+                    margin-bottom: 5px;
+                }
+                .acomment-content {
+                    line-height: 1.4em;
                 }
                 
-                
+                // sub-comment form
+                .ac-form {
+                    .dev-outline;
+                }
             } // li
-        } //.activity-comments
+            
+            // first level comments
+            > li {
+                margin: 10px;
+                padding-left: 0;
+                
+                // sub level comments
+                li:first-child {
+                    
+                }
+                
+                li:last-child {
+                    
+                }
+            }
+            
+            // first level last comment
+            > li:last-child {
+                
+            }
+            
+        } //.activity-comments > ul
+        
+        // comment form
+        .activity-comments .ac-form {
+            display: none; // hide reply form by default
+            .dev-outline;
+            
+            .ac-reply-avatar {
+                float: left;
+                img { width: 30px; height: 30px; }
+            }
+            
+            .ac-reply-content {
+                margin-left: 40px;
+                
+                .ac-textarea {
+                    width: 100%;
+                    
+                    textarea {
+                        width: 100%;
+                    }
+                }
+            }
+        
+        } // .activity-comments .ac-form
+        
     } // .activity-list
     
 } // body.buddypress

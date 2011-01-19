@@ -36,8 +36,14 @@ body.buddypress .item-list li{padding:5px;border:solid 1px #CCC;margin:5px;posit
 body.buddypress .item-list li .item-avatar a{line-height:0;}
 body.buddypress .item-list li .item,body.buddypress .item-list li .content{margin-left:55px;}
 body.buddypress .item-list li .activity-comments .ac-reply-avatar{float:left;}body.buddypress .item-list li .activity-comments .ac-reply-avatar img{width:30px;height:30px;}
-body.buddypress .activity-list .activity-comments{overflow:hidden;}body.buddypress .activity-list .activity-comments li{padding:5px;border:solid 1px #CCC;margin:5px;}body.buddypress .activity-list .activity-comments li .acomment-avatar{float:left;}
-body.buddypress .activity-list .activity-comments li .acomment-meta,body.buddypress .activity-list .activity-comments li .acomment-content{margin-left:25px;}
+body.buddypress .activity-list .activity-comments>ul{overflow:hidden;}body.buddypress .activity-list .activity-comments>ul li{padding:5px;border:solid 1px #CCC;margin:5px;}body.buddypress .activity-list .activity-comments>ul li .acomment-avatar{float:left;}
+body.buddypress .activity-list .activity-comments>ul li .acomment-meta,body.buddypress .activity-list .activity-comments>ul li .acomment-content{margin-left:30px;}
+body.buddypress .activity-list .activity-comments>ul li .acomment-meta{margin-bottom:5px;}
+body.buddypress .activity-list .activity-comments>ul li .acomment-content{line-height:1.4em;}
+body.buddypress .activity-list .activity-comments>ul li .ac-form{padding:5px;border:solid 1px #CCC;margin:5px;}
+body.buddypress .activity-list .activity-comments>ul>li{margin:10px;padding-left:0;}
+body.buddypress .activity-list .activity-comments .ac-form{display:none;padding:5px;border:solid 1px #CCC;margin:5px;}body.buddypress .activity-list .activity-comments .ac-form .ac-reply-avatar{float:left;}body.buddypress .activity-list .activity-comments .ac-form .ac-reply-avatar img{width:30px;height:30px;}
+body.buddypress .activity-list .activity-comments .ac-form .ac-reply-content{margin-left:40px;}body.buddypress .activity-list .activity-comments .ac-form .ac-reply-content .ac-textarea{width:100%;}body.buddypress .activity-list .activity-comments .ac-form .ac-reply-content .ac-textarea textarea{width:100%;}
 body.forums.directory #forums-search-form h3{float:left;}
 body.forums.directory #forums-search-form #new-topic-post{padding:5px;border:solid 1px #CCC;margin:5px;clear:both;}
 body.forums.directory #forums-search-form #forums-directory-form{clear:both;}
